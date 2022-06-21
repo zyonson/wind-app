@@ -1,0 +1,6 @@
+<%= link_to "商品登録",new_admins_store_path %>
+
+<% @stores.each do |store| %>
+    <%= store.name %>
+    <%= store.prefecture %>
+<% end %>

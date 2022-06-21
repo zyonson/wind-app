@@ -10,5 +10,6 @@ FactoryBot.define do
     near_station { "MyString" }
     image { "MyString" }
     space_of_surf { "MyString" }
+    prefecture { "MyString" }
   end
 end

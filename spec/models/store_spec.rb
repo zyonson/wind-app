@@ -36,4 +36,9 @@ RSpec.describe Store, type: :model do
     store.valid?
     expect(store.errors[:space_of_surf]).to include("can't be blank")
   end
+  it "is invalid without a prefecture" do
+    store = build(:store, prefecture: nil)
+    store.valid?
+    expect(store.errors[:prefecture]).to include("can't be blank")
+  end
 end
