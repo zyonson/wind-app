@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations',
   }
+  namespace :admins do
+    get 'toppages/index'
+    root "toppages#index"
+  end
 end
