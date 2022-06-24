@@ -14,6 +14,28 @@ class Admins::StoresController < Admins::ApplicationController
     end
   end
 
+  def edit
+    @store = Store.find(params[:id])
+  end
+
+  def update
+    @store = Store.find(params[:id])
+    if @store.update(store_params)
+      flash[:notice] = "Storeが更新されました"
+      redirect_to admins_toppages_index_path
+    else
+      flash[:notice] = "Storeの更新に失敗しました"
+      render :edit
+    end
+  end
+
+  # def destroy
+  #  @store = Store.find(params[:id])
+  #  @store.destroy
+  #  flash[:notice] = "Storeが削除されました"
+  #  redirect_to admins_toppages_index_path
+  #end
+
   private
 
   def store_params

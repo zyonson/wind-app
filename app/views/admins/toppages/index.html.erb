@@ -1,6 +1,32 @@
 <%= link_to "商品登録",new_admins_store_path %>
-
+<table>
+  <tr>
+    <th>名前</th>
+    <th>住所</th>
+    <th>説明</th>
+    <th>予約方法</th>
+    <th>営業時間</th>
+    <th>休日</th>
+    <th>料金</th>
+    <th>最寄駅</th>
+    <th>画像</th>
+    <th>艇庫</th>
+    <th>都道府県</th>
+    <th>編集</th>
+  <tr>
 <% @stores.each do |store| %>
-    <%= store.name %>
-    <%= store.prefecture %>
+    <tr>
+      <td><%= store.name %></td>
+      <td><%= store.address %></td>
+      <td><%= store.description %></td>
+      <td><%= store.reserve_way %></td>
+      <td><%= store.open %></td>
+      <td><%= store.holiday %></td>
+      <td><%= store.price %></td>
+      <td><%= store.near_station %></td>
+      <td><%= store.image %></td>
+      <td><%= store.space_of_surf %></td>
+      <td><%= store.prefecture %></td>
+      <td><%= link_to "編集", edit_admins_store_path(store) %></td>
+    </tr>
 <% end %>
