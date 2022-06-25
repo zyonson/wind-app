@@ -1,4 +1,5 @@
 class Store < ApplicationRecord
+  has_one_attached :image
   belongs_to :admin, optional: true
   with_options presence: true do
     validates :reserve_way

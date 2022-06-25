@@ -34,7 +34,7 @@ class Admins::StoresController < Admins::ApplicationController
   #  @store.destroy
   #  flash[:notice] = "Storeが削除されました"
   #  redirect_to admins_toppages_index_path
-  #end
+  # end
 
   private
 
