@@ -17,7 +17,7 @@ RSpec.describe Store, type: :model do
     expect(store.errors[:open]).to include("can't be blank")
   end
   it "is invalid without a holiday" do
-    store = build(:store, holiday: nil)
+    store = build(:store, holiday: nil, image: nil)
     store.valid?
     expect(store.errors[:holiday]).to include("can't be blank")
   end
@@ -40,5 +40,10 @@ RSpec.describe Store, type: :model do
     store = build(:store, prefecture: nil)
     store.valid?
     expect(store.errors[:prefecture]).to include("can't be blank")
+  end
+  it "is invalid without a store_url" do
+    store = build(:store, store_url: nil)
+    store.valid?
+    expect(store.errors[:store_url]).to include("can't be blank")
   end
 end

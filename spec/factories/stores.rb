@@ -11,5 +11,6 @@ FactoryBot.define do
     image { "MyString" }
     space_of_surf { "MyString" }
     prefecture { "MyString" }
+    store_url { "MyString" }
   end
 end

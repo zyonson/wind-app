@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_25_075325) do
     t.string "image"
     t.string "space_of_surf", null: false
     t.string "prefecture", null: false
+    t.string "store_url", null: false
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   namespace :admins do
     get 'toppages/index'
     root "toppages#index"
-    resources :stores, only: [:new, :create, :edit, :update, :destroy]
+    resources :stores, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   end
 end

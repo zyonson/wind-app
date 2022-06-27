@@ -12,6 +12,7 @@ class CreateStores < ActiveRecord::Migration[7.0]
       t.string :image
       t.string :space_of_surf, null:false
       t.string :prefecture,    null:false
+      t.string :store_url,     null:false
       t.references :admin, foreign_key: true
 
       t.timestamps

@@ -1,4 +1,8 @@
 class Admins::StoresController < Admins::ApplicationController
+  def index
+    @stores = Store.all
+  end
+
   def new
     @store = Store.new
   end
@@ -12,6 +16,10 @@ class Admins::StoresController < Admins::ApplicationController
       flash.now[:notice] = "Store正常に作成されませんでした"
       render :new
     end
+  end
+
+  def show
+    @store = Store.find(params[:id])
   end
 
   def edit
@@ -40,6 +48,6 @@ class Admins::StoresController < Admins::ApplicationController
 
   def store_params
     params.require(:store).permit(:name, :address, :description,
-    :reserve_way, :open, :holiday, :price, :near_station, :image, :space_of_surf, :prefecture)
+    :reserve_way, :open, :holiday, :price, :near_station, :image, :space_of_surf, :prefecture, :store_url)
   end
 end
