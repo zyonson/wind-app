@@ -9,7 +9,7 @@ class Store < ApplicationRecord
     validates :near_station
     validates :space_of_surf
     validates :prefecture
-    # validates :store_url
+    validates :store_url
   end
   validates :name, presence: true, uniqueness: true
 end

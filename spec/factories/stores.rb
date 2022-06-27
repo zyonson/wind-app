@@ -8,7 +8,6 @@ FactoryBot.define do
     holiday { "MyString" }
     price { 1 }
     near_station { "MyString" }
-    image { "MyString" }
     space_of_surf { "MyString" }
     prefecture { "MyString" }
     store_url { "MyString" }
