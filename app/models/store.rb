@@ -10,6 +10,7 @@ class Store < ApplicationRecord
     validates :space_of_surf
     validates :prefecture
     validates :store_url
+    validates :image
   end
   validates :name, presence: true, uniqueness: true
 end

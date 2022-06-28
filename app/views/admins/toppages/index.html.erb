@@ -1,4 +1,4 @@
-<%= link_to "商品登録",new_admins_store_path %>
+<%= link_to "商品登録",new_admins_store_path, class: "btn-lg" %>
 <table>
   <tr>
     <th class="col-2">名前</th>
@@ -6,7 +6,8 @@
     <th class="col-2">営業時間</th>
     <th class="col-2">料金</th>
     <th class="col-2">都道府県</th>
-    <th class="col-2">編集</th>
+    <th class="col-1">編集</th>
+    <th class="col-1">詳細</th>
   <tr>
 <% @stores.each do |store| %>
     <tr>
@@ -15,6 +16,7 @@
       <td class="col-2"><%= store.open %></td>
       <td class="col-2"><%= store.price %></td>
       <td class="col-2"><%= store.prefecture %></td>
-      <td class="col-2"><%= link_to "編集", edit_admins_store_path(store) %></td>
+      <td class="col-1"><%= link_to "編集", edit_admins_store_path(store) %></td>
+      <td class="col-1"><%= link_to "詳細", admins_store_path(store.id) %></td>
     </tr>
 <% end %>
