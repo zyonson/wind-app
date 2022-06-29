@@ -1,0 +1,24 @@
+
+
+<div class="card mb-5" style="max-width: 1080px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= image_tag @store.image, :size => '300x300' %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">店舗名: <%= @store.name %></h5>
+        <p class="card-text">住所: <%= @store.address %></p>
+        <p class="card-text">紹介: <%= @store.description %></p>
+        <p class="card-text">電話番号: <%= @store.phone %></p>
+        <p class="card-text">予約方法: <%= @store.reserve_way %></p>
+        <p class="card-text">営業時間: <%= @store.open %></p>
+        <p class="card-text">定休日: <%= @store.holiday %></p>
+        <p class="card-text">料金: <%= @store.price %></p>
+        <p class="card-text">最寄駅: <%= @store.near_station %></p>
+        <p class="card-text">艇庫: <%= @store.space_of_surf %></p>
+        <p><%= link_to "#{@store.name}の予約はこちらから！", @store.store_url %></p>
+      </div>
+    </div>
+  </div>
+</div>

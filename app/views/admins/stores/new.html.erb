@@ -1,0 +1,58 @@
+<h1>新規ストアの追加</h1>
+
+<%= simple_form_for [:admins,@store], local: true do |f| %>
+  <%= render partial: 'admins/stores/shared/error_form', locals: { store: @store } %>
+  <div class="form-group row">
+    <%= f.label :name, '店舗名', class: "col-sm-2" %>
+    <%= f.text_field :name, class: 'form-control, col-sm-10' %>
+  </div>
+  <div class="form-group row">
+      <%= f.label :address, '住所', class: "col-sm-2" %>
+      <%= f.text_field :address ,class: 'form-control, col-sm-10' %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :description, '紹介', class: "col-sm-2" %>
+      <%= f.text_field :description , rows: "3", class: 'form-control, col-sm-10' %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :phone, '電話番号', class: "col-sm-2" %>
+      <%= f.text_field :phone , rows: "3", class: 'form-control, col-sm-10' %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :reserve_way, '予約方法', class: "col-sm-2" %>
+      <%= f.text_field :reserve_way ,class: 'form-control, col-sm-10' %>
+    </div>
+  <div class="form-group row">
+    <%= f.label :open, '営業時間', class: "col-sm-2" %>
+    <%= f.text_field :open ,class: 'form-control, col-sm-10' %>
+  </div>
+  <div class="form-group row">
+    <%= f.label :holiday, '定休日', class: "col-sm-2" %>
+    <%= f.text_field :holiday ,class: 'form-control, col-sm-10' %>
+  </div>
+  <div class="form-group row">
+    <%= f.label :price, '料金', class: "col-sm-2" %>
+    <%= f.text_field :price ,class: 'form-control, col-sm-10' %>
+  </div>
+  <div class="form-group row">
+  <%= f.label :near_station, '最寄駅', class: "col-sm-2" %>
+  <%= f.text_field :near_station ,class: 'form-control, col-sm-10' %>
+</div>
+  <div class="form-group row">
+    <%= f.label :image, "画像", class: "col-sm-2" %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="form-group row">
+    <%= f.label :space_of_surf, '艇庫', class: "col-sm-2" %>
+    <%= f.text_field :space_of_surf ,class: 'form-control, col-sm-10' %>
+  </div>
+  <div class="form-group row">
+    <%= f.label :prefecture, '都道府県', class: "col-sm-2" %>
+    <%= f.text_field :prefecture ,class: 'form-control, col-sm-10' %>
+  </div>
+  <div class="form-group row">
+    <%= f.label :store_url, '店舗URL', class: "col-sm-2" %>
+    <%= f.text_field :store_url ,class: 'form-control, col-sm-10' %>
+  </div>
+  <%= f.button :submit, "作成", :class => 'btn btn-primary btn-lg d-grid gap-2 col-12' %>
+<% end %>

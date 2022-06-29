@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      store: 店舗
+    attributes:
+      store:
+        name: 店舗名
+        address: 住所
+        description: 紹介
+        phone: 電話番号
+        reserve_way: 予約方法
+        open: 営業時間
+        holiday: 定休日
+        price: 料金
+        near_station: 最寄駅
+        image: 画像
+        space_of_surf: 艇庫
+        prefecture: 都道府県
+        store_url: 店舗のURL

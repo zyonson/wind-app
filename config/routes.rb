@@ -9,4 +9,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations',
   }
+  root to: "stores#index"
+  namespace :admins do
+    get 'toppages/index'
+    root "toppages#index"
+    resources :stores, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  end
 end
