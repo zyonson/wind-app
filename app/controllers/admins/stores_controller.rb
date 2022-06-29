@@ -13,8 +13,7 @@ class Admins::StoresController < Admins::ApplicationController
       flash[:notice] = "Storeが正常に作成されました"
       redirect_to admins_toppages_index_path
     else
-      flash.now[:notice] = "Store正常に作成されませんでした"
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -32,8 +31,7 @@ class Admins::StoresController < Admins::ApplicationController
       flash[:notice] = "Storeが更新されました"
       redirect_to admins_toppages_index_path
     else
-      flash[:notice] = "Storeの更新に失敗しました"
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
