@@ -3,7 +3,7 @@ FactoryBot.define do
     name { "MyString" }
     address { "MyString" }
     description { "MyText" }
-    phone { "MyText" }
+    phone { "09043234322" }
     reserve_way { "MyString" }
     open { "MyString" }
     holiday { "MyString" }

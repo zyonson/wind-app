@@ -21,6 +21,11 @@ RSpec.describe Store, type: :model do
     store.valid?
     expect(store.errors[:phone]).to include("を入力してください")
   end
+  it "is invalid if the phone number is break the " do
+    store = build(:store, phone: "12332123212")
+    store.valid?
+    expect(store.errors[:phone]).to include("は不正な値です")
+  end
   it "is invalid without a reserve_way" do
     store = build(:store, reserve_way: nil)
     store.valid?
