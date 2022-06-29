@@ -2,6 +2,9 @@ class Store < ApplicationRecord
   has_one_attached :image
   belongs_to :admin, optional: true
   with_options presence: true do
+    validates :address
+    validates :description
+    validates :phone
     validates :reserve_way
     validates :open
     validates :holiday

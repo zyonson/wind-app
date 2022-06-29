@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_25_075325) do
     t.string "name", null: false
     t.string "address", null: false
     t.text "description", null: false
+    t.text "phone", null: false
     t.string "reserve_way", null: false
     t.string "open", null: false
     t.string "holiday", null: false

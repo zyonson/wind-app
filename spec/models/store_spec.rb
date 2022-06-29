@@ -6,6 +6,21 @@ RSpec.describe Store, type: :model do
     store.valid?
     expect(store.errors[:name]).to include("を入力してください")
   end
+  it "is invalid without a description" do
+    store = build(:store, description: nil)
+    store.valid?
+    expect(store.errors[:description]).to include("を入力してください")
+  end
+  it "is invalid without a address" do
+    store = build(:store, address: nil)
+    store.valid?
+    expect(store.errors[:address]).to include("を入力してください")
+  end
+  it "is invalid without a phone" do
+    store = build(:store, phone: nil)
+    store.valid?
+    expect(store.errors[:phone]).to include("を入力してください")
+  end
   it "is invalid without a reserve_way" do
     store = build(:store, reserve_way: nil)
     store.valid?

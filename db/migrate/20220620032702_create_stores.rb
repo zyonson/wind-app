@@ -4,6 +4,7 @@ class CreateStores < ActiveRecord::Migration[7.0]
       t.string :name,          null:false, unique: true
       t.string :address,       null:false
       t.text :description,     null:false
+      t.text :phone,           null:false
       t.string :reserve_way,   null:false
       t.string :open,          null:false
       t.string :holiday,       null:false
