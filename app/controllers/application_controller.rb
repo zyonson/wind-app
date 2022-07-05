@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_current_user
 
   protected
 
@@ -11,8 +12,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if admin_signed_in?
       admins_toppages_index_path
-    else
-      admins_toppages_index_path
     end
+  end
+
+  def set_current_user
+    @current_user = current_user
   end
 end

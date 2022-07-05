@@ -1,2 +1,4 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+
+
+<%= link_to "profile詳細", user_path(current_user.id) %>
+<%= link_to "profile編集", edit_user_path(current_user.id) %>
