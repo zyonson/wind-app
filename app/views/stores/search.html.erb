@@ -1,0 +1,25 @@
+<h1>検索結果:<%= @stores.count %>件</h1>
+
+<div class="container">
+  <div class="row">
+    <% @stores.each do |store| %>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag store.image %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to store.name, admins_store_path(store.id) %></h5>
+            <p class="card-text"><%= store.address %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= store.open %></li>
+            <li class="list-group-item"><%= store.price %></li>
+            <li class="list-group-item"><%= store.holiday %></li>
+            <li class="list-group-item"><%= store.reserve_way %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "トップページに戻る", stores_path %>

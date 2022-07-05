@@ -1,0 +1,7 @@
+
+<%= search_form_for @q, url: search_stores_path do |f| %>
+  <%= f.label :prefecture_or_address, "Keyword" %>
+  <%= f.search_field :prefecture_or_address_cont %>
+  
+  <%= f.submit "検索" %>
+<% end %>
