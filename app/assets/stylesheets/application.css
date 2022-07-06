@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+.top{
+    background-image: url(https://s3cdn.sotoasobi.net/outfitter/wp-content/uploads/20200721161330/pixta_3017690_M-top-min.jpg);
+    background-position: center;
+    background-size: cover;
+    height:800px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search{
+  
+  
+  
+}
+
+img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover; /* この一行を追加するだけ！ */
+  }

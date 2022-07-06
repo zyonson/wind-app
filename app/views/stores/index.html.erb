@@ -1,7 +1,41 @@
+<div class="top">
+  <div class="search">
+    <%= search_form_for @q, url: search_stores_path do |f| %>
+      <%= f.label :prefecture_or_address, "検索" %>
+      <%= f.search_field :prefecture_or_address_cont %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+</div>
 
-<%= search_form_for @q, url: search_stores_path do |f| %>
-  <%= f.label :prefecture_or_address, "Keyword" %>
-  <%= f.search_field :prefecture_or_address_cont %>
-  
-  <%= f.submit "検索" %>
-<% end %>
+<diV>
+  <h1>人気BEST3</h1>
+  <container>
+    <div class="row">
+      <div class="card text-white col-xl-4 col-md-6 col-sm-12">
+        <%= link_to "stores/search?q%5Bprefecture_or_address_cont%5D=沖縄&commit=検索" do %>
+          <img class="card-img image-trim" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwdAo-KI1uy_4zNTNkwjRJI2vOJ7C9-pybXg&usqp=CAU" alt="沖縄イメージ画像">
+          <div class="card-img-overlay">
+            <h4 class="card-title">沖縄</h4>
+          </div>
+        <% end %>
+      </div>
+      <div class="card text-white col-xl-4 col-md-6 col-sm-12">
+        <%= link_to "stores/search?q%5Bprefecture_or_address_cont%5D=大阪&commit=検索" do %>
+          <img class="card-img image-trim" src="https://www.img-ikyu.com/contents/dg/special/kankou/spot/3434_origin.jpg?auto=compress,format&fit=crop&w=600&h=530&lossless=0" alt="大阪イメージ画像">
+          <div class="card-img-overlay">
+            <h4 class="card-title">大阪</h4>
+          </div>
+        <% end %>
+      </div>
+      <div class="card text-white col-xl-4 col-md-6 col-sm-12">
+        <%= link_to "stores/search?q%5Bprefecture_or_address_cont%5D=東京&commit=検索" do %>
+          <img class="card-img image-trim" src="https://static.tokyo-np.co.jp/image/article/size1/b/b/7/5/bb75edcde104c6a354af78328591ec6b_2.jpg" alt="東京イメージ画像">
+          <div class="card-img-overlay">
+            <h4 class="card-title">東京</h4>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </container>
+</div>
