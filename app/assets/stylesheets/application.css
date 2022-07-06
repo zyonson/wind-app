@@ -17,8 +17,11 @@
     text-align:center;
     color:red;
 }
-
- .top{
+.dropdown{
+    width:100px;
+  margin-left: auto;
+}
+.top{
     background-image: url(https://s3cdn.sotoasobi.net/outfitter/wp-content/uploads/20200721161330/pixta_3017690_M-top-min.jpg);
     background-position: center;
     background-size: cover;
@@ -29,7 +32,6 @@
     align-items: center;
     justify-content: center;
 }
-
 img{
     width: 250px;
     height: 400px;
