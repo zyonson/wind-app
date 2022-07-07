@@ -4,6 +4,8 @@
       メニュー
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li class="dropdown-item"><%= button_to "userページ", users_path, method: :get %></li>
+      <li class="dropdown-item"><%= button_to "user編集ページ", edit_user_path(current_user.id), method: :get %></li>
       <li class="dropdown-item"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>
