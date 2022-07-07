@@ -17,10 +17,6 @@ class Admins::StoresController < Admins::ApplicationController
     end
   end
 
-  def show
-    @store = Store.find(params[:id])
-  end
-
   def edit
     @store = Store.find(params[:id])
   end
