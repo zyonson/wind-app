@@ -1,3 +1,5 @@
+<div class="nav-content">
+<%= link_to("Wind_surf", stores_path, {class: "top-title"}) %>
 <% if user_signed_in? %>
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"  aria-expanded="false">
@@ -21,3 +23,4 @@
   <div class="nav-item"><%= link_to 'Signup', new_user_registration_path, class: 'nav-link' %></div>
   <div class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></div>
 <% end %>
+</div>

@@ -17,6 +17,13 @@
     text-align:center;
     color:red;
 }
+.nav-content{
+    display:flex;
+}
+.top-title{
+    font-family: Londrina Shadow,cursive;
+    font-size:50px;
+}
 .dropdown{
     width:100px;
   margin-left: auto;
