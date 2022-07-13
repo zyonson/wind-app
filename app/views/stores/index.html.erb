@@ -2,7 +2,7 @@
   <h1>GO TO Windsurfen!</h1>
 </div>
 <div class="top">
-  <div class="search">
+  <div class="search" id="search">
     <%= search_form_for @q, url: search_stores_path do |f| %>
       <%= f.label :prefecture_or_address, "検索" %>
       <%= f.search_field :prefecture_or_address_cont %>

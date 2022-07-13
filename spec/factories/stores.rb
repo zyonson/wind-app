@@ -12,5 +12,12 @@ FactoryBot.define do
     space_of_surf { "MyString" }
     prefecture { "MyString" }
     store_url { "MyString" }
+    after(:build) do |store|
+      store.image.attach(
+        io: File.open(Rails.root.join('spec', 'files', 'shoes.jpeg')),
+        filename: 'test.jpg',
+        content_type: 'image/jpeg'
+      )
+    end
   end
 end
