@@ -12,7 +12,7 @@ RSpec.describe 'Stores', type: :system do
   scenario "search no store" do
     visit stores_path
     within("#search") do
-      fill_in "q[prefecture_or_address_cont]", with: "沖縄"
+      fill_in "q[name_or_prefecture_or_address_cont]", with: "沖縄"
       click_button "検索"
     end
     expect(page).to have_content "検索結果:0件"
@@ -21,7 +21,7 @@ RSpec.describe 'Stores', type: :system do
   scenario "search" do
     visit stores_path
     within("#search") do
-      fill_in "q[prefecture_or_address_cont]", with: "東京"
+      fill_in "q[name_or_prefecture_or_address_cont]", with: "東京"
       click_button "検索"
     end
     expect(page).to have_content "検索結果:1件"

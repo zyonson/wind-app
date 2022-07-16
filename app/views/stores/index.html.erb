@@ -4,8 +4,8 @@
 <div class="top">
   <div class="search" id="search">
     <%= search_form_for @q, url: search_stores_path do |f| %>
-      <%= f.label :prefecture_or_address, "検索" %>
-      <%= f.search_field :prefecture_or_address_cont %>
+      <%= f.label :name_or_prefecture_or_address, "検索" %>
+      <%= f.search_field :name_or_prefecture_or_address_cont %>
       <%= f.submit "検索" %>
     <% end %>
   </div>
