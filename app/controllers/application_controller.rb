@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if admin_signed_in?
       admins_toppages_index_path
+    else
+      users_path
     end
   end
 

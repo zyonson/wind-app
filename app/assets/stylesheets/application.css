@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+.header{
+    text-align:center;
+    color:red;
+}
+.nav-content{
+    display:flex;
+}
+.top-title{
+    font-family: Londrina Shadow,cursive;
+    font-size:50px;
+}
+.dropdown{
+    width:100px;
+  margin-left: auto;
+}
+.top{
+    background-image: url(https://s3cdn.sotoasobi.net/outfitter/wp-content/uploads/20200721161330/pixta_3017690_M-top-min.jpg);
+    background-position: center;
+    background-size: cover;
+    height:800px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    width: 250px;
+    height: 400px;
+    object-fit: cover; /* この一行を追加するだけ！ */
+  }

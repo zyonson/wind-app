@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "profileが更新されました"
-      redirect_to users_path(params[:id])
+      redirect_to users_path(current_user)
     else
       render :edit, status: :unprocessable_entity
     end

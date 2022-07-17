@@ -1,26 +1,32 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-light p-4"style="background-color: #e3f2fd">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </li>
-        <% elsif admin_signed_in? %>
-              <li class="nav-item"><%= button_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-        <% else %>
-          <li class="nav-item"><%= link_to 'Signup', new_user_registration_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
-        <% end %>
+<div class="nav-content">
+  <%= link_to("Wind_surf", stores_path, {class: "top-title"}) %>
+  <% if user_signed_in? %>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"  aria-expanded="false">
+      メニュー
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item"><%= button_to "userページ", users_path, method: :get %></li>
+        <li class="dropdown-item"><%= button_to "user編集ページ", edit_user_path(current_user.id), method: :get %></li>
+        <li class="dropdown-item"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
-  </nav>
-</header>
+  <% elsif admin_signed_in? %>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">メニュー
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item"><%= button_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  <% else %>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"  aria-expanded="false">登録
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item"><%= button_to "ログイン", new_user_session_path, method: :get %></li>
+        <li class="dropdown-item"><%= button_to "新規登録", new_user_registration_path, method: :get %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
