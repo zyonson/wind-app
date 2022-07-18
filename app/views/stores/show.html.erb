@@ -17,6 +17,7 @@
         <p class="card-text">艇庫: <%= @store.space_of_surf %></p>
         <p><%= link_to "#{@store.name}の予約はこちらから！", @store.store_url %></p>
       </div>
+      <%= render 'favorites/favorite' %>
     </div>
   </div>
   <%= link_to '戻る', :back %>

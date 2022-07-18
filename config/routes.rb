@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'stores/index'
   get 'users/index'
   get 'users/show'
   get 'users/edit'
@@ -25,5 +24,10 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :stores, only: [:index, :show]
+  resources :users, only: [:show, :edit, :update] do
+    get :favorites, on: :collection
+  end
+  resources :stores, expect: [:show] do
+    resource :favorites, only: [:create, :destroy]
+  end
 end
