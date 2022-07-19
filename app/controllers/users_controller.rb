@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_current_user, { only: [:show, :edit, :update] }
   def index
+    favorites = Favorite.where(user_id: current_user.id).pluck(:store_id)
+    @favorite_list = Store.find(favorites)
   end
 
   def show
