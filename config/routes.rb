@@ -30,4 +30,7 @@ Rails.application.routes.draw do
   resources :stores, expect: [:show] do
     resource :favorites, only: [:create, :destroy]
   end
+  resources :stores, expect: [:show] do
+    resource :comments, only: [:create]
+  end
 end

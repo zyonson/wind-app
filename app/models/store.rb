@@ -2,6 +2,7 @@ class Store < ApplicationRecord
   has_one_attached :image
   belongs_to :admin, optional: true
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
   with_options presence: true do
     validates :address
     validates :description

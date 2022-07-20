@@ -5,6 +5,8 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find(params[:id])
+    @comments = @store.comments
+    @comment = Comment.new
   end
 
   def search

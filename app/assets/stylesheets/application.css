@@ -42,5 +42,14 @@
 img{
     width: 250px;
     height: 400px;
-    object-fit: cover; /* この一行を追加するだけ！ */
+    object-fit: cover;
+  }
+.comment-name{
+    text-align: right;
+  }
+.comment-content{
+    min-width: 200px;
+    max-width: 100%;
+    border-color:aqua;
+    border-radius: 10px;
   }
