@@ -17,9 +17,20 @@ RSpec.describe "Comments", type: :system do
     expect(page).to have_content "コメント数1件"
   end
 
-  scenario "" do
+  scenario "without comment_title, not save" do
     visit store_path(store)
     fill_in "comment[comment_content]", with: "安い"
     expect(page).to have_content "コメント数0件"
+  end
+
+  scenario "user can't comment same store" do
+    visit store_path(store)
+    fill_in "comment[comment_title]", with: "最高"
+    fill_in "comment[comment_content]", with: "安い"
+    click_button "コメントする"
+    fill_in "comment[comment_title]", with: "とても最高"
+    fill_in "comment[comment_content]", with: "とても安い"
+    click_button "コメントする"
+    expect(page).not_to have_content "とても安い"
   end
 end
