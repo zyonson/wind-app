@@ -2,26 +2,26 @@
 <%= link_to "profile編集", edit_user_path(current_user.id) %>
 
 <% if @favorite_list.present? %>
-<div class="container">
-<h1>お気に入り店舗</h1>
-  <div class="row">
-    <% @favorite_list.each do |store| %>
-      <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-          <%= image_tag store.image %>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to store.name, store_path(store.id) %></h5>
-            <p class="card-text"><%= store.address %></p>
+  <div class="container">
+    <h1>お気に入り店舗</h1>
+    <div class="row">
+      <% @favorite_list.each do |store| %>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <%= image_tag store.image %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to store.name, store_path(store.id) %></h5>
+              <p class="card-text"><%= store.address %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= store.open %></li>
+              <li class="list-group-item"><%= store.price %></li>
+              <li class="list-group-item"><%= store.holiday %></li>
+              <li class="list-group-item"><%= store.reserve_way %></li>
+            </ul>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= store.open %></li>
-            <li class="list-group-item"><%= store.price %></li>
-            <li class="list-group-item"><%= store.holiday %></li>
-            <li class="list-group-item"><%= store.reserve_way %></li>
-          </ul>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 <% end %>

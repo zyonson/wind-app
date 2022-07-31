@@ -31,6 +31,6 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   resources :stores, expect: [:show] do
-    resource :comments, only: [:create]
+    resource :comments, only: [:create, :destroy]
   end
 end

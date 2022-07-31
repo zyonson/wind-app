@@ -33,4 +33,13 @@ RSpec.describe "Comments", type: :system do
     click_button "コメントする"
     expect(page).not_to have_content "とても安い"
   end
+
+  scenario "check the comment delete function" do
+    visit store_path(store)
+    fill_in "comment[comment_title]", with: "最高"
+    fill_in "comment[comment_content]", with: "安い"
+    click_button "コメントする"
+    click_button "削除"
+    expect(page).to have_content "コメントを削除しました"
+  end
 end
