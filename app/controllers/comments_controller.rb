@@ -11,10 +11,11 @@ class CommentsController < ApplicationController
         @comment.save
         redirect_back(fallback_location: root_path)
       else
+        flash[:notice] = "すでにコメント済みです"
         redirect_back(fallback_location: root_path)
       end
     else
-      flash.now[:alert] = "レビューの保存に失敗しました"
+      flash[:notice] = "レビューの保存に失敗しました"
       redirect_back(fallback_location: root_path)
     end
   end

@@ -58,3 +58,7 @@ img{
     border-color:aqua;
     border-radius: 10px;
 }
+.comment{
+  display:flex;
+  margin-bottom: 20px;
+}

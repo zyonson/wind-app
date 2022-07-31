@@ -28,15 +28,18 @@
             <h2>コメント一覧</h2>
             <div>
               <% @comments.each do |c| %>
-                <div class="comment-content bg-light col-9 mx-5 mb-5">
-                  <div>
-                    <h5><%= c.comment_title %></h5>
-                  </div>
-                  <div>
-                    <%= c.comment_content %>
-                  </div>
-                  <div class="comment-name">
-                    <%= c.user.name %>
+                <div class="comment">
+                  <div class="bg-white col-xs-0"></div>
+                  <div class="comment-content bg-light col-sm-10 col-xs-12">
+                    <div>
+                      <h5><%= c.comment_title %></h5>
+                    </div>
+                    <div>
+                      <%= c.comment_content %>
+                    </div>
+                    <div class="comment-name">
+                      <%= c.user.name %>
+                    </div>
                   </div>
                 </div>
               <% end %>
