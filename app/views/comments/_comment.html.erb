@@ -6,7 +6,7 @@
           <h2>口コミ</h2>
         </div>
         <div class="card-body text-center mt-4">
-          <%= form_for [@store, @comment] do |f| %>
+          <%= form_with model: [@store, @comment] do |f| %>
             <div>
             <%= f.label "タイトル" %>
             <%= f.text_field :comment_title %>
